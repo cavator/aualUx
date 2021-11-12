@@ -1,0 +1,18 @@
+import axios, { Method } from 'axios';
+
+const client = axios.create({
+    baseURL: "http://localhost:3000/api/",
+    timeout: 30000
+});
+
+export const executeRequest = (endpoint: string, method: Method, body?: any): any => {
+    const headers = { 'Content-Type': 'application/json' };
+
+    console.log(`executando: ${endpoint}, metodo: ${method}, body: ${body}`);
+    return client.request({
+        url: endpoint,
+        method,
+        data: body ? body : '',
+        headers
+    });
+}
