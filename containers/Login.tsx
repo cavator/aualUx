@@ -141,7 +141,7 @@ export const Login: NextPage<AccessTokenProps> = ({
                     <div className="input">
                         <img src="/lock.svg" alt="Repita sua senha"/>
                         <input type="password" placeholder="Repita sua senha"
-                               value={password} onChange={evento => setConfirmPassword(evento.target.value)}/>
+                               value={confirmPassword} onChange={evento => setConfirmPassword(evento.target.value)}/>
                     </div>
                     <button type="button" onClick={doRegister} disabled={isLoading}
                             className={isLoading ? 'loading' : ''}>
