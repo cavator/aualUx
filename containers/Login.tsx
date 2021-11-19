@@ -30,7 +30,7 @@ export const Login: NextPage<AccessTokenProps> = ({
                 password,
             }
 
-            const result = await executeRequest('Login', 'POST', body)
+            const result = await executeRequest('login', 'POST', body)
             if (result && result.data) {
                 localStorage.setItem('accessToken', result.data.token)
                 localStorage.setItem('userName', result.data.name)
@@ -70,7 +70,7 @@ export const Login: NextPage<AccessTokenProps> = ({
                 email,
                 password,
             }
-            const result = await executeRequest('User', 'POST', body)
+            const result = await executeRequest('user', 'POST', body)
             if (result && result.data) {
                await doLogin()
 
